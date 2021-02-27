@@ -19,12 +19,12 @@ void Bomb::resetBomb() {
     reset_all(start_x, start_y, 120, -90, 0, BOMB_G, false, true);
 }
 
-void Bomb::makeVis() { // to make the bomb visible when needed
+void Bomb::unhideBomb() { // to make the bomb visible when needed
     bomb_circle.setColor(COLOR("grey"));
     bomb_circle.setFill(true);
 }
 
-void Bomb::makeInvis() { // to make the bomb invisible
+void Bomb::hideBomb() { // to make the bomb invisible
     bomb_circle.setColor(COLOR("white"));
     bomb_circle.setFill(true);
 }

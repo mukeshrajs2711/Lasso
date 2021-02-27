@@ -13,16 +13,21 @@ void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
     }*/
 
     if (level == 2) {
+        // modifying the parameters of lasso and coin
         lasso->mod_acc(20, 20);
         coin->mod_acc_v(120, 75, 0, COIN_G);
+        
+        // to reset lasso and coin
+        lasso->resetLasso();
+        coin->resetCoin();
     }
 
     if(level == 3) {
-        bomb->unpause();
-        bomb->makeVis();
+        bomb->unpause(); // to get the bomb moving
+        bomb->unhideBomb(); // to make the bomb visible
     }
 
     if(level == 4) {
-        bomb->makeInvis();
+        bomb->hideBomb(); // make the bomb invisible again
     }
 }

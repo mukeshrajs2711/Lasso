@@ -53,8 +53,6 @@ main_program {
   string msg2("Level: _");
   Text gameLevel(PLAY_X_START+200, PLAY_Y_HEIGHT+20, msg2);
 
-  
-
   // After every COIN_GAP sec, make the coin jump
   double last_coin_jump_end = 0;
 
@@ -153,6 +151,7 @@ main_program {
           bomb.resetBomb();
         }
         if(bomb_caught) {
+          coin.resetCoin();
           bomb.resetBomb();
           lasso.restoreNumCoins(); //if bomb is caught, progress in the level resets
         }

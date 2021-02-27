@@ -81,6 +81,8 @@ class Lasso : public MovingObject {
     lasso_ax = argax;
     lasso_ay = argay;
   }
+
+  void resetLasso(); // to reset lasso to it's initial position and speed
 }; // End class Lasso
 
 #endif
