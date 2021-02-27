@@ -145,7 +145,8 @@ main_program {
         last_coin_jump_end = currTime;
       }
 
-      if(lev_num == 3) {
+      // level 3 and bomb related modifications
+      if( lev_num == 3 ) {
         bomb.nextStep(stepTime); 
         if(bomb.getYPos() > PLAY_Y_HEIGHT) { // bomb back to it's starting
           bomb.resetBomb();
@@ -157,6 +158,15 @@ main_program {
         }
       }
 
+    /*
+      // level 4 related modifications
+      if( lev_num == 1 ) {
+        double delta_x = coin.getXPos() - lasso.getXPos();
+        double delta_y = coin.getYPos() - lasso.getYPos();
+        coin.mod_acc(0.01*delta_x, 0.01*delta_y);
+      }
+    */
+    
       sprintf(coinScoreStr, "Coins: %d", lasso.getNumCoins()); // updates coinStoreStr
       coinScore.setMessage(coinScoreStr); // changes the output to the string coinScoreStr
 

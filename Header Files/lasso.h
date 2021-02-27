@@ -77,7 +77,7 @@ class Lasso : public MovingObject {
   int getNumCoins() { return num_coins; }
   void restoreNumCoins() { num_coins = 0; } //function that restores value of coins to 0
 
-  void mod_acc(int argax, int argay) { //function to modify ax and ay
+  void set_acc(int argax, int argay) { // to set ax and ay as given arguments
     lasso_ax = argax;
     lasso_ay = argay;
   }
