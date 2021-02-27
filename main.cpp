@@ -160,7 +160,7 @@ main_program {
 
     /*
       // level 4 related modifications
-      if( lev_num == 1 ) {
+      if( lev_num == 4 ) {
         double delta_x = coin.getXPos() - lasso.getXPos();
         double delta_y = coin.getYPos() - lasso.getYPos();
         coin.mod_acc(0.01*delta_x, 0.01*delta_y);
