@@ -23,6 +23,6 @@ void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
     }
 
     if(level == 4) {
-        
+        bomb->makeInvis();
     }
 }

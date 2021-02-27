@@ -26,7 +26,8 @@ class Bomb : public MovingObject {
         }
 
     void resetBomb(); // to reset bomb back to position
-    void makeVis();
+    void makeVis(); // to make the bomb visible
+    void makeInvis(); // to make the bomb invisible
 };
 
 #endif

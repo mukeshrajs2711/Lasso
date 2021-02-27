@@ -24,3 +24,8 @@ void Bomb::makeVis() { // to make the bomb visible when needed
     bomb_circle.setFill(true);
 }
 
+void Bomb::makeInvis() { // to make the bomb invisible
+    bomb_circle.setColor(COLOR("white"));
+    bomb_circle.setFill(true);
+}
+
