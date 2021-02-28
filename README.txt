@@ -59,4 +59,4 @@ IMPORTANT NOTE:
 	supposed to last until 5 coins are gathered is trimmed to 2 coins. This is in
 	effect only in the video.
 	
-LINK TO THE VIDEO:
+LINK TO THE VIDEO:  https://drive.google.com/file/d/1NeXZFd2XHywtF_2r4R31Y4RgovyvAuSO/view?usp=sharing
