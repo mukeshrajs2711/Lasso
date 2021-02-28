@@ -196,7 +196,7 @@ main_program {
 
         if(bomb_caught) {
           coin.resetCoin();
-          lasso.resetLasso();
+          lasso.yank();
           for(int i = 0; i < 3; ++i) {
             bomb[i].resetBomb();
           }
