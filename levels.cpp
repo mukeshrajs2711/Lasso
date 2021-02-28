@@ -23,11 +23,16 @@ void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
     }
 
     if(level == 3) {
-        bomb->unpause(); // to get the bomb moving
-        bomb->unhideBomb(); // to make the bomb visible
+        for(int i = 0; i < 3; ++i) {
+            bomb[i].unpause(); // to get the bomb moving
+            bomb[i].unhideBomb(); // to make the bomb visible
+        }
     }
 
     if(level == 4) {
-        bomb->hideBomb(); // make the bomb invisible again
+        for(int i = 0; i < 3; i++) {
+            bomb[i].resetBomb(); // to reset it to the top
+            bomb[i].hideBomb(); // make the bomb invisible again
+        }
     }
 }

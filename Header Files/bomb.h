@@ -17,12 +17,12 @@ class Bomb : public MovingObject {
     Circle bomb_circle;
 
     public:
-        void initBomb();
+        void initBomb(double );
 
         Bomb (double argvx, double argvy, double argax, double argay, bool argpaused = true) : MovingObject(argvx, argvy, argax, argay, argpaused) {
             vx = argvx; vy = argvy;
             ax = argax; ay = argay;
-            initBomb();
+            initBomb(argvy);
         }
 
     void resetBomb(); // to reset bomb back to position
