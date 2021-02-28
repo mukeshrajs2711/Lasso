@@ -77,7 +77,7 @@ void Lasso::addSpeed(double speed) {
 void Lasso::nextStep(double stepTime) {
   draw_lasso_band();
   MovingObject::nextStep(stepTime);
-  if(getYPos() > PLAY_Y_HEIGHT) { yank(0); }
+  if(getYPos() > PLAY_Y_HEIGHT) { yank(); }
   lasso_line.reset(lasso_start_x, lasso_start_y, getXPos(), getYPos());
 } // End Lasso::nextStep()
 

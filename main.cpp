@@ -177,7 +177,7 @@ main_program {
       if(coin.getYPos() > PLAY_Y_HEIGHT) {
         if(lev_num == 4) {
           srand(time(0));
-          coin.set_v(150, rand()%25+75);
+          coin.set_v(150, rand()%45+75);
         }
         coin.resetCoin();
         last_coin_jump_end = currTime;
@@ -203,8 +203,6 @@ main_program {
         }
       }
 
-      
-    
       sprintf(coinScoreStr, "Coins: %d", lasso.getNumCoins()); // updates coinStoreStr
       coinScore.setMessage(coinScoreStr); // changes the output to the string coinScoreStr
 
@@ -226,6 +224,9 @@ main_program {
         game_time += stepTime; // updating the gameTime
       }
     } // end of one step
+
+    lasso.resetLasso();
+    coin.resetCoin();
   } // end of a level
 
   wait(3);
