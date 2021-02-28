@@ -3,7 +3,7 @@
 
 void Bomb::initBomb() {
     srand(time(0)); // to seed rand()
-    start_x = rand()%700 + 100; // to create a random number b/w 100 and 800
+    start_x = rand()%700 + 200; // to create a random number b/w 100 and 800
     start_y = 0;
     bomb_circle.reset(start_x, start_y, BOMB_SIZE);
     // Note that the bomb is intitally white making it invisible
@@ -14,7 +14,7 @@ void Bomb::initBomb() {
 
 void Bomb::resetBomb() {
     srand(time(0)); // to seed rand()
-    start_x = rand()%700 + 100; // to create a random number b/w 100 and 800
+    start_x = rand()%700 + 200; // to create a random number b/w 100 and 800
     start_y = 0;
     reset_all(start_x, start_y, 120, -90, 0, BOMB_G, false, true);
 }
