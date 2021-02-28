@@ -13,6 +13,7 @@ void Coin::initCoin() {
 void Coin::resetCoin() {
   double coin_speed = release_speed;
   double coin_angle_deg = release_angle_deg;
-  bool paused = true, rtheta = true;
+  bool paused = true; 
+  bool rtheta = true;
   reset_all(coin_start_x, coin_start_y, coin_speed, coin_angle_deg, coin_ax, coin_ay, paused, rtheta);
 }

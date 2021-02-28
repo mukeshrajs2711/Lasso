@@ -208,7 +208,7 @@ main_program {
       sprintf(coinScoreStr, "Coins: %d", lasso.getNumCoins()); // updates coinStoreStr
       coinScore.setMessage(coinScoreStr); // changes the output to the string coinScoreStr
 
-      if(lasso.getNumCoins() > 5) { 
+      if(lasso.getNumCoins() > 1) { 
           lev_num++;                  // to update level number once 5 coins caught
           lasso.restoreNumCoins();
           break;   

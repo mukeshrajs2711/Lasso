@@ -52,3 +52,10 @@ the player to check high scores and their position.
 
 (*) Command to compile: ./compile.sh
     [s++ -o lasso lasso.cpp MovingObject.cpp coin.cpp levels.cpp bomb.cpp main.cpp]
+   
+IMPORTANT NOTE:
+	For the sake of simplicity and the size of the video, a level in game which is 
+	supposed to last until 5 coins are gathered is trimmed to 2 coins. This is in
+	effect only in the video.
+	
+LINK TO THE VIDEO:
