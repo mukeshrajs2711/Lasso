@@ -16,7 +16,7 @@ main_program {
     player_name[strcspn(player_name, "\n")] = '\0'; // to remove the '\n' in the end of player_name
   }
 
-  initCanvas("Lasso", WINDOW_X, WINDOW_Y);
+  initCanvas("Lasso", WINDOW_X+200, WINDOW_Y);
   int stepCount = 0;
   float stepTime = STEP_TIME; 
   float runTime = -1; // sec; -ve means infinite
@@ -43,7 +43,7 @@ main_program {
   // Define bombs 
   Bomb bomb[3] = {Bomb(0, BOMB_SPEED, 0, BOMB_G), Bomb(0, 2*BOMB_SPEED, 0, BOMB_G), Bomb(0, 1.4*BOMB_SPEED, 0, 0.8*BOMB_G)};
 
-  Line b1(0, PLAY_Y_HEIGHT, WINDOW_X, PLAY_Y_HEIGHT); // x-axis
+  Line b1(0, PLAY_Y_HEIGHT, WINDOW_X+200, PLAY_Y_HEIGHT); // x-axis
   b1.setColor(COLOR("blue"));
   Line b2(PLAY_X_START, 0, PLAY_X_START, WINDOW_Y);  // y-axis
   b2.setColor(COLOR("blue"));
@@ -178,7 +178,7 @@ main_program {
 
       if(coin.getYPos() > PLAY_Y_HEIGHT || coin.getXPos() < PLAY_X_START) {
         if(lev_num == 4) {
-          srand(time(0));
+          srand(time(0)*100);
           coin.set_v(150, rand()%45+75);
         }
         coin.resetCoin();
