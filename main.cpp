@@ -176,7 +176,7 @@ main_program {
         }
       }
 
-      if(coin.getYPos() > PLAY_Y_HEIGHT) {
+      if(coin.getYPos() > PLAY_Y_HEIGHT || coin.getXPos() < PLAY_X_WIDTH) {
         if(lev_num == 4) {
           srand(time(0));
           coin.set_v(150, rand()%45+75);
