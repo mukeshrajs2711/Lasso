@@ -95,16 +95,19 @@ void Lasso::check_for_coin(Coin *coinPtr) {
   }
 } // End Lasso::check_for_coin()
 
-bool Lasso::check_for_bomb(Bomb *bombPtr) {
+bool Lasso::check_for_bomb(Bomb *bombPtr) { // to check if any bomb is within range
   double lasso_x = getXPos();
   double lasso_y = getYPos();
-  double bomb_x = bombPtr->getXPos();
-  double bomb_y = bombPtr->getYPos();
-  double delta_x = (lasso_x - bomb_x);
-  double delta_y = (lasso_y - bomb_y);
-  double distance = sqrt((delta_x*delta_x) + (delta_y*delta_y));
-  if(distance <= LASSO_RADIUS) {
-    return true;
+  for(int i = 0; i < 3; ++i) {
+    double bomb_x = bombPtr[i].getXPos();
+    double bomb_y = bombPtr[i].getYPos();
+    double delta_x = (lasso_x - bomb_x);
+    double delta_y = (lasso_y - bomb_y);
+    double distance = sqrt((delta_x*delta_x) + (delta_y*delta_y));
+    if(distance <= LASSO_RADIUS) {
+      return true;
+      break;
+    }
   }
   return false;
 }

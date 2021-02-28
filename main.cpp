@@ -32,8 +32,8 @@ main_program {
   double coin_ay = COIN_G;
   Coin coin(coin_speed, coin_angle_deg, coin_ax, coin_ay, paused, rtheta);
 
-  // Draw bomb at start position
-  Bomb bomb(0, BOMB_SPEED, 0, BOMB_G, true);
+  // Define bombs 
+  Bomb bomb[3] = {Bomb(0, BOMB_SPEED, 0, BOMB_G), Bomb(0, 1.7*BOMB_SPEED, 0, BOMB_G), Bomb(0, 1.4*BOMB_SPEED, 0, BOMB_G)};
 
   Line b1(0, PLAY_Y_HEIGHT, WINDOW_X, PLAY_Y_HEIGHT); // x-axis
   b1.setColor(COLOR("blue"));
@@ -73,7 +73,7 @@ main_program {
     msg2[msg2.length()-1] = lev_num+48;
     gameLevel.setMessage(msg2);
 
-    level_mod(lev_num, &lasso, &coin, &bomb);
+    level_mod(lev_num, &lasso, &coin, bomb);
 
     while(true) {
       if((runTime > 0) && (currTime > runTime)) { break; }  
@@ -103,7 +103,7 @@ main_program {
 	              lasso.loopit();
 	              lasso.check_for_coin(&coin);
                 if(lev_num == 3)
-                  bomb_caught = lasso.check_for_bomb(&bomb); // to check whether lasso caught bomb
+                  bomb_caught = lasso.check_for_bomb(bomb); // to check whether lasso caught a bomb
 	              wait(STEP_TIME*5);
 	              break;
 
@@ -147,14 +147,18 @@ main_program {
 
       // level 3 and bomb related modifications
       if( lev_num == 3 ) {
-        bomb.nextStep(stepTime); 
-        if(bomb.getYPos() > PLAY_Y_HEIGHT) { // bomb back to it's starting
-          bomb.resetBomb();
+        for(int i = 0; i < 3; ++i) {
+          bomb[i].nextStep(stepTime); // to move the bombs
+          if(bomb[i].getYPos() > PLAY_Y_HEIGHT) { // bombs back to it's starting
+            bomb[i].resetBomb();
+          }
         }
         if(bomb_caught) {
           coin.resetCoin();
-          bomb.resetBomb();
-          lasso.restoreNumCoins(); //if bomb is caught, progress in the level resets
+          for(int i = 0; i < 3; ++i) {
+            bomb[i].resetBomb();
+          }
+          lasso.restoreNumCoins(); //if a bomb is caught, progress in the level resets
         }
       }
 
