@@ -32,6 +32,7 @@ Level 5:
     All these levels must've tested the skills of the player. This level is
     designed to test the patience of the player. Get ready for some slow 
     burn. The game is intentionally slowed down to 3fps to make it harder.
+    Also, the coin is given varying starting speed to spice things up.
 
 
 
