@@ -1,4 +1,4 @@
-#include "Header Files/bomb.h"
+#include "header_files/bomb.h"
 #include<cstdlib>
 
 void Bomb::initBomb(double argvy) {

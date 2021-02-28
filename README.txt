@@ -1,4 +1,4 @@
-Introduction to the game
+		***Introduction to the Lasso Game***
 
 Objective:
     The game consists of five levels. The objective of the game is to 
@@ -44,6 +44,10 @@ Commands of the game:
     '-': To reduce the speed of lasso throw
     '=': To increase the speed of the lasso
     'q': To quit the game
+    
+The progress of every player who has successfull completed the game 
+is saved in a file named 'log.txt'. This file can also be used by 
+the player to check high scores and their position.
 
 
 (*) Command to compile: ./compile.sh

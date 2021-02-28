@@ -1,5 +1,5 @@
-#include "Header Files/coin.h"
-#include "Header Files/lasso.h"
+#include "header_files/coin.h"
+#include "header_files/lasso.h"
 
 void Coin::initCoin() {
   coin_start_x = (PLAY_X_START+WINDOW_X)/2;

@@ -2,10 +2,10 @@
 
 #include <simplecpp>
 #include <string>
-#include "Header Files/MovingObject.h"
-#include "Header Files/lasso.h"
-#include "Header Files/coin.h"
-#include "Header Files/bomb.h"
+#include "header_files/MovingObject.h"
+#include "header_files/lasso.h"
+#include "header_files/coin.h"
+#include "header_files/bomb.h"
 
 void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
     /*if(level == 1) {
