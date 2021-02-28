@@ -83,7 +83,8 @@ main_program {
   */
 
   int lev_num = 1; // level of the game
-  void level_mod(int, Lasso *, Coin *, Bomb *); 
+  void level_mod(int, Lasso *, Coin *, Bomb *); // modifications for each level
+  //void help(); // display help
 
   while(true) { // start of each level
 
@@ -92,10 +93,6 @@ main_program {
     gameLevel.setMessage(msg2);
 
     level_mod(lev_num, &lasso, &coin, bomb);
-
-    // to define vector from lasso to coin
-    double diff_x1 = diff_y1 = 0; // vector in previous step
-    double diff_x2 = diff_y2 = 0; // vector in current step
 
     while(true) { // start of step
       if((runTime > 0) && (currTime > runTime)) { break; }  
@@ -133,6 +130,10 @@ main_program {
 	              wait(STEP_TIME*3);
 	              break;
 
+              case 'h': // 'h' for 'help'. Shows list of commands
+                //help();
+                break;
+
               case '[':
 	              if(lasso.isPaused()) { lasso.addAngle(-RELEASE_ANGLE_STEP_DEG);	}
 	              break;
@@ -156,6 +157,7 @@ main_program {
 	              break;
 
               case 'q':
+                cout << "Your time was: " << game_time << "s\n";
 	              exit(0);
 
               default:
@@ -173,6 +175,10 @@ main_program {
       }
 
       if(coin.getYPos() > PLAY_Y_HEIGHT) {
+        if(lev_num == 4) {
+          srand(time(0));
+          coin.set_v(150, rand()%25+75);
+        }
         coin.resetCoin();
         last_coin_jump_end = currTime;
       }
@@ -197,18 +203,7 @@ main_program {
         }
       }
 
-    /*
-      // level 4 related modifications
-      if( lev_num == 4 ) {
-        diff_x1 = diff_x2;
-        diff_y1 = diff_y2;
-
-        diff_x2 = coin.getXPos() - lasso.getXPos();
-        diff_y2 = coin.getYPos() - lasso.getYPos();
-
-        coin.mod_acc(diff_x2, diff_y2);
-      }
-    */
+      
     
       sprintf(coinScoreStr, "Coins: %d", lasso.getNumCoins()); // updates coinStoreStr
       coinScore.setMessage(coinScoreStr); // changes the output to the string coinScoreStr

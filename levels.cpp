@@ -15,11 +15,8 @@ void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
     if (level == 2) {
         // modifying the parameters of lasso and coin
         lasso->set_acc(20, 20);
-        coin->set_acc_v(120, 75, 0, COIN_G);
-        
-        // to reset lasso and coin
-        lasso->resetLasso();
-        coin->resetCoin();
+        coin->set_v(120, 75);
+        coin->set_acc(0, COIN_G);
     }
 
     if(level == 3) {

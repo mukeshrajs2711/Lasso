@@ -77,12 +77,13 @@ class Lasso : public MovingObject {
   int getNumCoins() { return num_coins; }
   void restoreNumCoins() { num_coins = 0; } //function that restores value of coins to 0
 
-  void set_acc(int argax, int argay) { // to set ax and ay as given arguments
+  void resetLasso(); // to reset lasso to it's initial position and speed
+
+  void set_acc(double argax, double argay) { // to set ax and ay as given arguments
     lasso_ax = argax;
     lasso_ay = argay;
+    resetLasso();
   }
-
-  void resetLasso(); // to reset lasso to it's initial position and speed
 }; // End class Lasso
 
 #endif

@@ -24,20 +24,18 @@ class Coin : public MovingObject {
   }
 
   void initCoin();
-  void resetCoin();
+  void resetCoin(); 
 
-/*  
-  void mod_acc(double argax, double argay) { // to modify acceleration by given arguments
-    coin_ax += argax;
-    coin_ay += argay;
-  }
-*/  
-
-  void set_acc_v(double argspd, double argdeg,double argax, double argay) { // to set acceleration and velocity as given arguments
-    release_speed = argspd;
-    release_angle_deg = argdeg;
+  void set_acc(double argax, double argay) { // to set acceleration 
     coin_ax = argax;
     coin_ay = argay;
+    resetCoin();
+  }
+
+  void set_v(double argspd, double argdeg) { // to set velocity
+    release_speed = argspd; 
+    release_angle_deg = argdeg;
+    resetCoin();
   }
 }; // End class Coin
 
