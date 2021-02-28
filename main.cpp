@@ -159,7 +159,7 @@ main_program {
 	              break;
 
               case 'q':
-                cout << "You Quit!\nYour time was: " << game_time << "s\n";
+                cout << "You Quit without completing your game!\n"; 
 	              exit(0);
 
               default:
