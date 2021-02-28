@@ -231,7 +231,7 @@ main_program {
     coin.resetCoin();
 
     if(lev_num > 5) {// exit after 5 levels
-      cout << "You win!!\n";
+      cout << "You did it!!\n";
       cout << "Your time was: " << game_time << "s\n";
       cout << "Look in the file \"log.txt\" for high scores!\n";
       update_log(player_name, game_time);

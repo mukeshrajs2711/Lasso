@@ -13,7 +13,7 @@ void Bomb::initBomb(double argvy) {
 }
 
 void Bomb::resetBomb() {
-    srand(vy); // to seed rand()
+    srand(vy + time(0)); // to seed rand()
     start_x = rand()%550 + 200; // to create a random number b/w 200 and 750
     start_y = 0;
     reset_all(start_x, start_y, vy, -90, 0, ay, false, true);
