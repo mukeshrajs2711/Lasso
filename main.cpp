@@ -33,7 +33,7 @@ main_program {
   Coin coin(coin_speed, coin_angle_deg, coin_ax, coin_ay, paused, rtheta);
 
   // Define bombs 
-  Bomb bomb[3] = {Bomb(0, BOMB_SPEED, 0, BOMB_G), Bomb(0, 1.7*BOMB_SPEED, 0, BOMB_G), Bomb(0, 1.4*BOMB_SPEED, 0, BOMB_G)};
+  Bomb bomb[3] = {Bomb(0, BOMB_SPEED, 0, BOMB_G), Bomb(0, 2*BOMB_SPEED, 0, BOMB_G), Bomb(0, 1.4*BOMB_SPEED, 0, 0.8*BOMB_G)};
 
   Line b1(0, PLAY_Y_HEIGHT, WINDOW_X, PLAY_Y_HEIGHT); // x-axis
   b1.setColor(COLOR("blue"));
@@ -78,7 +78,7 @@ main_program {
     while(true) {
       if((runTime > 0) && (currTime > runTime)) { break; }  
 
-      bool bomb_caught = false;    
+      bool bomb_caught = false; // to check whether bomb is caught    
 
       XEvent e;
       bool pendingEv = checkEvent(e);
@@ -104,7 +104,7 @@ main_program {
 	              lasso.check_for_coin(&coin);
                 if(lev_num == 3)
                   bomb_caught = lasso.check_for_bomb(bomb); // to check whether lasso caught a bomb
-	              wait(STEP_TIME*5);
+	              wait(STEP_TIME*3);
 	              break;
 
               case '[':
@@ -153,12 +153,15 @@ main_program {
             bomb[i].resetBomb();
           }
         }
+
         if(bomb_caught) {
           coin.resetCoin();
+          lasso.resetLasso();
           for(int i = 0; i < 3; ++i) {
             bomb[i].resetBomb();
           }
           lasso.restoreNumCoins(); //if a bomb is caught, progress in the level resets
+          bomb_caught = false;
         }
       }
 

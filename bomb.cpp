@@ -16,7 +16,7 @@ void Bomb::resetBomb() {
     srand(time(0)); // to seed rand()
     start_x = rand()%700 + 200; // to create a random number b/w 200 and 800
     start_y = 0;
-    reset_all(start_x, start_y, 120, -90, 0, BOMB_G, false, true);
+    reset_all(start_x, start_y, vy, -90, 0, ay, false, true);
 }
 
 void Bomb::unhideBomb() { // to make the bomb visible when needed

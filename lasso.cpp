@@ -106,7 +106,6 @@ bool Lasso::check_for_bomb(Bomb *bombPtr) { // to check if any bomb is within ra
     double distance = sqrt((delta_x*delta_x) + (delta_y*delta_y));
     if(distance <= LASSO_RADIUS) {
       return true;
-      break;
     }
   }
   return false;
