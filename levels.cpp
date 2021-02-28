@@ -37,6 +37,6 @@ void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
 
     if(level == 5) {
         coin->resetCoin();
-        cooin->set_v(120, 90);
+        coin->set_v(120, 90);
     }
 }
