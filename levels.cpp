@@ -32,6 +32,6 @@ void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
             bomb[i].hideBomb(); // make the bomb invisible again
         }
         srand(time(0));
-        coin->set_v(100, rand()%45+75);
+        coin->set_v(120, rand()%40+60);
     }
 }

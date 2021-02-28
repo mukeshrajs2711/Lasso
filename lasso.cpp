@@ -113,5 +113,6 @@ bool Lasso::check_for_bomb(Bomb *bombPtr) { // to check if any bomb is within ra
 
 void Lasso::resetLasso() { // to reset the lasso to initial position and speed
   reset_all(lasso_start_x, lasso_start_y, release_speed, release_angle_deg, lasso_ax, lasso_ay, true, true);
+  lasso_loop.reset(lasso_start_x, lasso_start_y, LASSO_SIZE/2);
 }
 
