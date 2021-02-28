@@ -34,4 +34,9 @@ void level_mod (int level, Lasso *lasso, Coin *coin, Bomb *bomb) {
         srand(time(0));
         coin->set_v(120, rand()%40+60);
     }
+
+    if(level == 5) {
+        coin->resetCoin();
+        cooin->set_v(120, 90);
+    }
 }
