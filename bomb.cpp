@@ -2,7 +2,7 @@
 #include<cstdlib>
 
 void Bomb::initBomb() {
-    srand(time(0)); // to seed rand()
+    srand(time(0)*100); // to seed rand()
     start_x = rand()%700 + 200; // to create a random number b/w 100 and 800
     start_y = 0;
     bomb_circle.reset(start_x, start_y, BOMB_SIZE);
