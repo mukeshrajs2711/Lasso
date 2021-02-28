@@ -1,11 +1,17 @@
-Instructions of the game
+Introduction to the game
 
-Objective: To complete all the levels of the game as quick as possible
+Objective:
+    The game consists of five levels. The objective of the game is to 
+    complete all the levels in the shortest time possible.
+
+The mechanics of the game:
+    The lasso game involves throwing a lasso and looping it to catch a coin
+    that bounces of the ground. Once the coin is caught, the player has to 
+    yank back the lasso to gain points.
 
 Level 1: 
-    The lasso game involves throwing a lasso and looping it to catch a coin
-    that bounces of the ground. This is the most basic level to get the 
-    player used to the game.
+    This is the most basic level to get the player used to the game. Every 
+    level needs fives coins to be caught in order to move to the next level. 
 
 Level 2:
     In this level, the coin is given a horizontal velocity as well to make
@@ -27,6 +33,17 @@ Level 5:
     designed to test the patience of the player. Get ready for some slow 
     burn. The game is intentionally slowed down to 3fps to make it harder.
 
+
+
+Commands of the game:
+    't': To throw the lasso
+    'l': To loop the lasso
+    'y': To yank the lasso
+    '[': To reduce the angle of the lasso throw
+    ']': To increase the angle of the lasso throw
+    '-': To reduce the speed of lasso throw
+    '=': To increase the speed of the lasso
+    'q': To quit the game
 
 
 (*) Command to compile: ./compile.sh

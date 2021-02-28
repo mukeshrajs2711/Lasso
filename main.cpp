@@ -20,7 +20,7 @@ main_program {
   int stepCount = 0;
   float stepTime = STEP_TIME; 
   float runTime = -1; // sec; -ve means infinite
-  float game_time = 0; // total time the game has been running
+  double game_time = 0; // total time the game has been running
   float currTime = 0;
 
   // Draw lasso at start position
@@ -84,6 +84,8 @@ main_program {
 
   int lev_num = 1; // level of the game
   void level_mod(int, Lasso *, Coin *, Bomb *); // modifications for each level
+  void update_log(char [], double);
+  void disp_highest();
   //void help(); // display help
 
   while(true) { // start of each level
@@ -157,7 +159,7 @@ main_program {
 	              break;
 
               case 'q':
-                cout << "Your time was: " << game_time << "s\n";
+                cout << "You Quit!\nYour time was: " << game_time << "s\n";
 	              exit(0);
 
               default:
@@ -184,7 +186,7 @@ main_program {
       }
 
       // level 3 and bomb related modifications
-      if( lev_num == 3 ) {
+      if(lev_num == 3) {
         for(int i = 0; i < 3; ++i) {
           bomb[i].nextStep(stepTime); // to move the bombs
           if(bomb[i].getYPos() > PLAY_Y_HEIGHT) { // bombs back to it's starting
@@ -206,8 +208,8 @@ main_program {
       sprintf(coinScoreStr, "Coins: %d", lasso.getNumCoins()); // updates coinStoreStr
       coinScore.setMessage(coinScoreStr); // changes the output to the string coinScoreStr
 
-      if(lasso.getNumCoins() > 2) { 
-          lev_num++;                  // update level number
+      if(lasso.getNumCoins() > 5) { 
+          lev_num++;                  // to update level number once 5 coins caught
           lasso.restoreNumCoins();
           break;   
       }
@@ -227,7 +229,16 @@ main_program {
 
     lasso.resetLasso();
     coin.resetCoin();
+
+    if(lev_num > 5) {// exit after 5 levels
+      cout << "You win!!\n";
+      cout << "Your time was: " << game_time << "s\n";
+      cout << "Look in the file \"log.txt\" for high scores!\n";
+      update_log(player_name, game_time);
+      break;
+    } 
   } // end of a level
 
   wait(3);
+  
 } // End main_program
